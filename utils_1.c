@@ -6,7 +6,7 @@
 /*   By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:15:50 by pruangde          #+#    #+#             */
-/*   Updated: 2022/11/19 15:22:10 by pruangde         ###   ########.fr       */
+/*   Updated: 2022/11/29 04:05:50 by pruangde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	**psw_multicase(char **av)
 {
-	//strjoin from av[1] to NULL
 	int		i;
 	char	*store;
 	char	**ret;
@@ -30,6 +29,7 @@ char	**psw_multicase(char **av)
 		i++;
 	}
 	ret = ft_split(store, ' ');
+	free(store);
 	return (ret);
 }
 
@@ -65,7 +65,7 @@ char	*psw_strjoin(char *s1, char *s2)
 int	psw_digit_pm(char **strptr)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (strptr[i])
@@ -74,10 +74,7 @@ int	psw_digit_pm(char **strptr)
 		while (strptr[i][j])
 		{
 			if (sp_digit_pm(strptr[i][j]) == 0)
-			{
-				ft_putendl_fd("BUG-222", 2);
 				return (0);
-			}
 			j++;
 		}
 		i++;
@@ -104,9 +101,8 @@ int	psw_cx10aft(char **strptr)
 			c = 0;
 			if (strptr[i][j] == '-' || strptr[i][j] == '+')
 				j++;
-			while (ft_isdigit(strptr[i][j]))
+			while (ft_isdigit(strptr[i][j++]))
 			{
-				j++;
 				c++;
 			}
 			if (c > 10)
@@ -118,5 +114,3 @@ int	psw_cx10aft(char **strptr)
 	}
 	return (1);
 }
-
-

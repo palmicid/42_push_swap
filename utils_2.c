@@ -6,7 +6,7 @@
 /*   By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:33:42 by pruangde          #+#    #+#             */
-/*   Updated: 2022/11/28 16:34:03 by pruangde         ###   ########.fr       */
+/*   Updated: 2022/11/29 04:02:36 by pruangde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int	*cx_maxmin_int(char **str, int *count)
 			ret[i] = (int)tmp;
 		i++;
 	}
-	return (ret); 
+	return (ret);
 }
 
 int	cx_same_num(int *arrnum, int count)
 {
 	int	i;
-	int j;
+	int	j;
 
 	if (count == 1)
 		return (1);

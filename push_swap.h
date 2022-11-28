@@ -38,7 +38,7 @@ typedef struct s_stackhead
 
 // cx_input_1
 t_pswlink	*dataprep(int ac, char **av);
-char		**handling_data(int ac, char **av, char **data);
+char		**handling_data(int ac, char **av);
 int			cx_valid(char **strptr);
 t_pswlink	*psw_atoink(char **strptr);
 
@@ -57,10 +57,14 @@ int			psw_count_list(t_pswlink *row);
 t_pswlink	*psw_freelist(t_pswlink *row);
 
 // utils_3
+void		add_tagnum(t_pswlink *a);
+void		init_zero(t_pswlink *a);
+int			cx_tag_zero(t_pswlink *a);
+void		tag_putin(t_pswlink *a, int i);
+int			find_min(t_pswlink *ptr);
 
 #endif
 
-// prep
-//	add to list and add tag number
+// fix norm
 // sort
 // 	with binary tag num

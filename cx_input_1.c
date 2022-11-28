@@ -6,7 +6,7 @@
 /*   By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:16:22 by pruangde          #+#    #+#             */
-/*   Updated: 2022/11/19 12:16:41 by pruangde         ###   ########.fr       */
+/*   Updated: 2022/11/29 04:15:21 by pruangde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_pswlink	*dataprep(int ac, char **av)
 {
-	char		**data = NULL;
-	t_pswlink	*a = NULL;
+	char		**data;
+	t_pswlink	*a;
 
-	data = handling_data(ac, av, data);
+	data = handling_data(ac, av);
 	if (!data)
 	{
 		ft_putendl_fd("Error", 2);
@@ -28,19 +28,20 @@ t_pswlink	*dataprep(int ac, char **av)
 		ft_free_p2p_char(data);
 		return (NULL);
 	}
-	a = psw_atolink(data);	//WIPPPPPPPPPPPPPPPPP
+	a = psw_atolink(data);
 	if (!a)
 	{
 		ft_free_p2p_char(data);
 		return (NULL);
 	}
-	ft_putendl_fd("BUG-0001", 2);
 	ft_free_p2p_char(data);
 	return (a);
 }
 
-char	**handling_data(int ac, char **av, char **data)
+char	**handling_data(int ac, char **av)
 {
+	char	**data;
+
 	if (ac == 2)
 		data = ft_split(av[1], ' ');
 	else
@@ -64,10 +65,11 @@ int	cx_valid(char **strptr)
 // cx same num
 t_pswlink	*psw_atolink(char **str)
 {
-	t_pswlink	*a = NULL;
+	t_pswlink	*a;
 	int			*tmp;
 	int			count;
 
+	a = NULL;
 	tmp = cx_maxmin_int(str, &count);
 	if (!tmp)
 		return (NULL);
@@ -80,7 +82,6 @@ t_pswlink	*psw_atolink(char **str)
 	free(tmp);
 	if (!a)
 		return (NULL);
-	// add tag
-
+	add_tagnum(a);
 	return (a);
 }
