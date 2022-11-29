@@ -6,7 +6,7 @@
 #    By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 12:37:19 by pruangde          #+#    #+#              #
-#    Updated: 2022/11/19 12:13:46 by pruangde         ###   ########.fr        #
+#    Updated: 2022/11/29 15:27:50 by pruangde         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,9 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 CXINPUT = cx_input_1.c
 UTIL = utils_1.c utils_2.c utils_3.c
+OPR = operation_1.c operation_2.c
 
-SRCS = push_swap.c $(CXINPUT) $(UTIL)
+SRCS = push_swap.c $(CXINPUT) $(UTIL) $(OPR)
 OBJS = $(SRCS:.c=.o)
 
 

@@ -6,7 +6,7 @@
 /*   By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:24:40 by pruangde          #+#    #+#             */
-/*   Updated: 2022/11/17 15:25:24 by pruangde         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:58:27 by pruangde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,20 @@ t_pswlink	*dataprep(int ac, char **av);
 char		**handling_data(int ac, char **av);
 int			cx_valid(char **strptr);
 t_pswlink	*psw_atoink(char **strptr);
+
+// operation_1
+void		sorting_hall(t_stackhead *box, char *inst);
+void		gate_swap(t_stackhead *box, char *inst);
+void		gate_opr_push(t_stackhead *box, char *inst);
+void		gate_rotate(t_stackhead *box, char *inst);
+void		gate_rev_rotate(t_stackhead *box, char *inst);
+
+// operation_2
+t_pswlink	*opr_swap(t_pswlink *swap);
+t_pswlink	*opr_rotate(t_pswlink *rot);
+t_pswlink	*opr_rev_rotate(t_pswlink *rrot);
+
+
 
 // utils_1
 char		**psw_multicase(char **av);
