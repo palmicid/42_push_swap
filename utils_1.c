@@ -6,7 +6,7 @@
 /*   By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:15:50 by pruangde          #+#    #+#             */
-/*   Updated: 2022/11/29 04:05:50 by pruangde         ###   ########.fr       */
+/*   Updated: 2022/11/30 15:40:12 by pruangde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,8 @@ int	psw_cx10aft(char **strptr)
 	int	j;
 	int	c;
 
-	i = 0;
-	while (strptr[i])
+	i = -1;
+	while (strptr[++i])
 	{
 		j = 0;
 		while (strptr[i][j])
@@ -101,16 +101,16 @@ int	psw_cx10aft(char **strptr)
 			c = 0;
 			if (strptr[i][j] == '-' || strptr[i][j] == '+')
 				j++;
-			while (ft_isdigit(strptr[i][j++]))
+			while (ft_isdigit(strptr[i][j]))
 			{
 				c++;
+				j++;
 			}
-			if (c > 10)
+			if (c > 10 || c == 0)
 				return (0);
-			if (strptr[i][j] != '\0')
+			if (strptr[i][j] != 0)
 				return (0);
 		}
-		i++;
 	}
 	return (1);
 }
