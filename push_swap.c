@@ -6,34 +6,29 @@
 /*   By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:24:14 by pruangde          #+#    #+#             */
-/*   Updated: 2022/11/29 20:51:29 by pruangde         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:47:30 by pruangde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//-------======== TEST=======----------
-void	test_print(t_stackhead *box)
+void	sorting(t_stackhead *box)
 {
-	t_pswlink	*ptr;
+	int	count;
 
-	ptr = box->a;
-	printf("A = ");
-	while (ptr)
-	{
-		printf(" %d ", ptr->tag);
-		ptr = ptr->next;
-	}
-	ft_putchar_fd('\n', 1);
-
-	ptr = box->b;
-	printf("B = ");
-	while (ptr)
-	{
-		printf(" %d ", ptr->tag);
-		ptr = ptr->next;
-	}
-	ft_putchar_fd('\n', 1);
+	count = psw_count_list(box->a);
+	if (count == 1)
+		return ;
+	else if (count == 2)
+		sort_two(box);
+	else if (count == 3)
+		sort_three(box);
+	else if (count == 4)
+		sort_four(box);
+	else if (count == 5)
+		sort_five(box);
+	else
+		to_radix(box, count);
 }
 
 int	main(int ac, char **av)
@@ -52,21 +47,8 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	box->b = NULL;
-	// sort
-	// sorting(box);
-	// TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-	sorting_hall(box, "pb");
-	sorting_hall(box, "pb");
-	sorting_hall(box, "pb");
-	sorting_hall(box, "pb");
-	sorting_hall(box, "rrr");
-	// sorting_hall(box, "rra");
-	// sorting_hall(box, "rrr");
-	test_print(box);
-	// TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-	// finish every thing
+	sorting(box);
 	box->a = psw_freelist(box->a);
-	box->b = psw_freelist(box->b);
 	free(box);
-	return (0);	
+	exit(EXIT_SUCCESS);
 }

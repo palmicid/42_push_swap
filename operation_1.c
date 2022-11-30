@@ -6,7 +6,7 @@
 /*   By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:43:01 by pruangde          #+#    #+#             */
-/*   Updated: 2022/11/29 20:49:58 by pruangde         ###   ########.fr       */
+/*   Updated: 2022/11/30 01:24:21 by pruangde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	sorting_hall(t_stackhead *box, char *inst)
 {
-	// print inst in gate
 	if (ft_strlen(inst) == 3)
 		gate_rev_rotate(box, inst);
 	else
@@ -79,11 +78,11 @@ void	gate_rotate(t_stackhead *box, char *inst)
 
 void	gate_rev_rotate(t_stackhead *box, char *inst)
 {
-	if (inst[1] == 'a')
+	if (inst[2] == 'a')
 		box->a = opr_rev_rotate(box->a);
-	else if (inst[1] == 'b')
+	else if (inst[2] == 'b')
 		box->b = opr_rev_rotate(box->b);
-	else if (inst[1] == 'r')
+	else if (inst[2] == 'r')
 	{
 		box->a = opr_rev_rotate(box->a);
 		box->b = opr_rev_rotate(box->b);

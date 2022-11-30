@@ -6,7 +6,7 @@
 /*   By: pruangde <pruangde@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:24:40 by pruangde          #+#    #+#             */
-/*   Updated: 2022/11/29 19:58:27 by pruangde         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:49:16 by pruangde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ typedef struct s_stackhead
 }						t_stackhead;
 
 // push_swap
-
-// operator_1
+void		sorting(t_stackhead *box);
 
 // cx_input_1
 t_pswlink	*dataprep(int ac, char **av);
@@ -54,7 +53,18 @@ t_pswlink	*opr_swap(t_pswlink *swap);
 t_pswlink	*opr_rotate(t_pswlink *rot);
 t_pswlink	*opr_rev_rotate(t_pswlink *rrot);
 
+// sort_1
+int			cx_complete(t_pswlink *a);
+void		to_radix(t_stackhead *box, int count);
+void		sub_radix(t_stackhead *box, int count, int shift);
+void		sort_two(t_stackhead *box);
+void		sort_three(t_stackhead *box);
 
+// sort_2
+void		sort_four(t_stackhead *box);
+void		sort_five(t_stackhead *box);
+void		sort_five_2(t_stackhead *box);
+int			spcx_comp345(t_pswlink *a);
 
 // utils_1
 char		**psw_multicase(char **av);
@@ -78,7 +88,3 @@ void		tag_putin(t_pswlink *a, int i);
 int			find_min(t_pswlink *ptr);
 
 #endif
-
-// fix norm
-// sort
-// 	with binary tag num
